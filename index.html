@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat Box</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+
+        :root {
+            --background-color: #efebe9;
+            /* Light Beige */
+            --navbar-background-color: #795548;
+            /* Brown */
+            --primary-text-color: #efebe9;
+            /* Dark Brown */
+            --input-field: #a1887f;
+            /* Medium Brown */
+            --icon-color: #bcaaa4;
+            /* Light Brown */
+        }
+
+        #container {
+            width: 50%;
+            height: 90vh;
+            border: 0.5px solid black;
+            box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
+            margin: auto;
+            margin-top: 2%;
+            position: relative;
+            background-color: var(--background-color);
+            color: var(--primary-text-color);
+            box-sizing: border-box;
+        }
+
+
+        h3:hover {
+            cursor: pointer;
+        }
+
+
+        ul {
+            display: flex;
+            justify-content: space-between;
+            list-style-type: none;
+            padding: 2px 20px;
+            background-color: var(--navbar-background-color);
+        }
+
+        #user-input-div {
+            width: 100%;
+            height: auto;
+            position: absolute;
+            bottom: 5px;
+            text-align: center;
+            display: flex;
+            box-sizing: border-box;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+
+        input[type="text"] {
+            padding: 15px;
+            width: 85%;
+            border-radius: 20px;
+            border: none;
+            background-color: var(--input-field);
+        }
+
+        #msg-sent-icon {
+            color: var(--icon-color);
+        
+        }
+
+        #msg-sent-container-div {
+            box-sizing: border-box;
+            width: 100%;
+            height: 75%;
+            /* border: 4px solid pink; */
+            color: black;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            overflow-y: auto;
+        }
+
+        .message-container {
+            align-self: flex-end;
+            padding: 5px;
+            margin: 5px;
+            border-radius: 10px;
+            width: 40%;
+            height: auto;
+        }
+
+        .user-message {
+            background-color: var(--navbar-background-color);
+            color: var(--primary-text-color);
+            width: auto;
+        }
+
+        .computer-response {
+            justify-content: flex-start;
+            align-self: flex-start;
+            background-color: var(--background-color);
+            color: black;
+
+        }
+
+        #QuestionsDiv{
+            width: 100%;
+            height: 80%;
+            position: absolute;
+            top:10%;
+            display: none;
+            justify-content: space-around;
+            align-items: center;
+            box-sizing: border-box;
+            background-color: var(--navbar-background-color);
+        }
+
+        #chld-d-ForQuestionsDiv1{
+            width: 45%;
+            height: inherit;
+            background-color: yellow;
+            border: 3px solid green;
+        }
+        #chld-d-ForQuestionsDiv2{
+            width: 45%;
+            height: inherit;
+            background-color: yellow;
+            border: 3px solid green;
+        }
+        @media (max-width: 786px) {
+            #container {
+                width: 90%;
+                /* Make the container take 90% of the screen width on smaller devices */
+                height: 85vh;
+            }
+
+            ul {
+                align-items: center;
+            }
+
+            .message-container {
+                width: 80%;
+            }
+            
+            input[type="text"] {
+                width: 85%;
+            }
+        }
+        /* @media (max-width:260px) {
+            ul{
+                flex-direction: row;
+                
+            }
+        } */
+        </style>
+</head>
+
+<body>
+    <div id="container">
+        <nav>
+            <ul>
+                <li>
+                    <h3>Muti ul rasool</h3>
+                </li>
+                <li>
+                    <h3 id="all-Questions">F&QS</h3>
+                </li>
+            </ul>
+        </nav>
+        <div id="msg-sent-container-div">
+
+        </div>
+        <div id="user-input-div">
+            <input autocomplete="off" type="text" placeholder="type your question" id="userInput">
+            <span>
+                <i class="fas fa-paper-plane fa-xl" id="msg-sent-icon" onclick="submitMsgOnClick()"></i>
+            </span>
+        </div>
+        <div id="QuestionsDiv">
+            <div id="chld-d-ForQuestionsDiv1">
+                <ul>
+                    <li><b>Greetings:(hye, hello, Good morning,good evening,good afternoon)</b></li>
+                    <li><b></b></li>
+                    <li><b></b></li>
+                    <li><b></b></li>
+                    <li><b></b></li>
+                </ul>
+            </div>
+            <div id="chld-d-ForQuestionsDiv2"></div>
+        </div>
+    </div>
+
+
+
+
+    <script src="chatbox.js"></script>
+</body>
+
+</html>
