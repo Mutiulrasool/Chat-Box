@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chat Box</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
     <style>
         body {
             margin: 0;
@@ -76,14 +77,13 @@
 
         #msg-sent-icon {
             color: var(--icon-color);
-        
+
         }
 
         #msg-sent-container-div {
             box-sizing: border-box;
             width: 100%;
             height: 75%;
-            /* border: 4px solid pink; */
             color: black;
             display: flex;
             flex-direction: column;
@@ -111,14 +111,21 @@
             align-self: flex-start;
             background-color: var(--background-color);
             color: black;
-
+            font-size: medium;
         }
 
-        #QuestionsDiv{
-            width: 100%;
-            height: 80%;
+        @media (max-width:786px) {
+            .computer-response {
+                font-size: small;
+            }
+        }
+
+        #QuestionsDiv {
+            width: 30%;
+            height: 95%;
             position: absolute;
-            top:10%;
+            top: 5%;
+            right: 0;
             display: none;
             justify-content: space-around;
             align-items: center;
@@ -126,22 +133,43 @@
             background-color: var(--navbar-background-color);
         }
 
-        #chld-d-ForQuestionsDiv1{
-            width: 45%;
-            height: inherit;
-            background-color: yellow;
-            border: 3px solid green;
+        .category {
+            display: block;
+            text-align: center;
         }
-        #chld-d-ForQuestionsDiv2{
-            width: 45%;
-            height: inherit;
-            background-color: yellow;
-            border: 3px solid green;
+
+        .question-ctgry-heading {
+            color: white;
+            cursor: pointer;
+            padding: 2px;
+            font-size: small;
+            font-weight: bold;
         }
+
+        .question-ctgry-heading:hover {
+            background-color: #a1887f;
+        }
+
+        .panel {
+            display: none;
+            font-size: 14px;
+        }
+
+        .panel>p:hover {
+            background-color: var(--icon-color);
+            cursor: pointer;
+
+        }
+
+        #x-iconToCloseTab {
+            position: absolute;
+            right: 5%;
+            font-size: medium;
+        }
+
         @media (max-width: 786px) {
             #container {
                 width: 90%;
-                /* Make the container take 90% of the screen width on smaller devices */
                 height: 85vh;
             }
 
@@ -152,18 +180,16 @@
             .message-container {
                 width: 80%;
             }
-            
+
             input[type="text"] {
                 width: 85%;
             }
-        }
-        /* @media (max-width:260px) {
-            ul{
-                flex-direction: row;
-                
+
+            #question-ctgry-heading {
+                font-size: x-small;
             }
-        } */
-        </style>
+        }
+    </style>
 </head>
 
 <body>
@@ -179,26 +205,101 @@
             </ul>
         </nav>
         <div id="msg-sent-container-div">
-
         </div>
         <div id="user-input-div">
-            <input autocomplete="off" type="text" placeholder="type your question" id="userInput">
+            <input autocomplete="off" type="text" placeholdSer="type your question" id="userInput">
             <span>
                 <i class="fas fa-paper-plane fa-xl" id="msg-sent-icon" onclick="submitMsgOnClick()"></i>
             </span>
         </div>
         <div id="QuestionsDiv">
-            <div id="chld-d-ForQuestionsDiv1">
-                <ul>
-                    <li><b>Greetings:(hye, hello, Good morning,good evening,good afternoon)</b></li>
-                    <li><b></b></li>
-                    <li><b></b></li>
-                    <li><b></b></li>
-                    <li><b></b></li>
-                </ul>
+            <i class="fa-solid fa-x fa-sm" id="x-iconToCloseTab"></i>
+            <div class="category">
+
+                <p class="question-ctgry-heading">Greetings</p>
+                <div class="panel">
+                    <p class="panel_child">Hye</p>
+                    <p class="panel_child">Hello</p>
+                    <p class="panel_child">Good morning</p>
+                    <!-- <p class="panel_child">Good afternoon</p>
+                    <p class="panel_child">Good evening</p> -->
+                </div>
             </div>
-            <div id="chld-d-ForQuestionsDiv2"></div>
+            <div class="category">
+                <p class="question-ctgry-heading">Age</p>
+                <div class="panel">
+                    <p class="panel_child">your Age?</p>
+                    <p class="panel_child">what is your Age</p>
+                    <p class="panel_child">how old are you?</p>
+                </div>
+            </div>
+            <div class="category">
+                <p class="question-ctgry-heading">Education</p>
+                <div class="panel">
+                    <p class="panel_child">what is your Education?</p>
+                    <p class="panel_child">what is your qualification?</p>
+                    <p class="panel_child">Do you have a degree?</p>
+                </div>
+            </div>
+            <div class="category">
+                <p class="question-ctgry-heading">Experience</p>
+                <div class="panel">
+                    <p class="panel_child">what is your work Experience?</p>
+                    <p class="panel_child">Do you have any work Experience?</p>
+                    <p class="panel_child">Have you done any job?</p>
+                </div>
+            </div>
+            <div class="category">
+                <p class="question-ctgry-heading">Location</p>
+                <div class="panel">
+                    <p class="panel_child">Where are you located?</p>
+                    <p class="panel_child">Where are you from?</p>
+                    <p class="panel_child">What is your nationality?</p>
+                </div>
+            </div>
+            <div class="category">
+                <p class="question-ctgry-heading">Hobbies</p>
+                <div class="panel">
+                    <p class="panel_child">what are your hobbies?</p>
+                    <p class="panel_child">what do you do in your free time?</p>
+                    <p class="panel_child">How do you spent your free time?</p>
+                </div>
+            </div>
+            <div class="category">
+                <p class="question-ctgry-heading">Current job</p>
+                <div class="panel">
+                    <p class="panel_child">whar do you do?</p>
+                    <p class="panel_child">what kind of job are you doing now?</p>
+                </div>
+            </div>
+            <div class="category">
+                <p class="question-ctgry-heading">Contact me</p>
+                <div class="panel">
+                    <p class="panel_child">how can I get in youch with you?</p>
+                    <p class="panel_child">What is your contact number?</p>
+                    <p class="panel_child">how can I contact you?</p>
+                </div>
+            </div>
+            <div class="category">
+                <p class="question-ctgry-heading">Farewell</p>
+                <div class="panel">
+                    <p class="panel_child">bye</p>
+                    <p class="panel_child">goood bye</p>
+                    <p class="panel_child">see you later</p>
+                </div>
+            </div>
+            <div class="category">
+                <p class="question-ctgry-heading">Thanks</p>
+                <div class="panel">
+                    <p class="panel_child">Thanks</p>
+                    <p class="panel_child">Thank you</p>
+                    <p class="panel_child">Thanks bro</p>
+                </div>
+            </div>
         </div>
+    </div>
+
+    </div>
     </div>
 
 
