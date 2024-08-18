@@ -27,7 +27,7 @@ const allQuestions = {
     location: ["where are you located?", "where are you from?", "what is your nationality?"],
     hobbies: ["what are your hobbies?", "what do you do in your free time?", "how do you spent your free time?"],
     currentJob: ["what kind of job are you doing now?", "what do you do?"],
-    contactingWithMe: ["how can I get in touch with you?", "what is your contact number", "how can i contact you?"],
+    contactingWithMe: ["what is your contact number?", "how can i contact you?"],
     proposals: ["are you seeking for new job role?", "do you want to start new job?", "in which field do you want to start your career?", "we have a job vacancy would you like to joing us?", "wanna start new job?"],
 };
 
@@ -50,7 +50,7 @@ function submitMsgOnClick() {
     setTimeout(() => {
         computerResponse.innerText = myResponseToUser(userMsg);
         accessTheSentMsgContainer.scrollTop = accessTheSentMsgContainer.scrollHeight;
-    }, 1500);
+    }, 1000);
 }
 
 function myResponseToUser(usermessage) {
